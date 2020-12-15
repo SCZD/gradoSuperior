@@ -1,51 +1,23 @@
 *{
   box-sizing: border-box;
-  /*
-  Para que mantenga el tamaño,i.e que si decimos que mida
-  150px y le damos un padding no se va ha hacer mas grande
-  tipo 150px el contenido mas el padding si no que no va ha superar
-  los 150px.
-  */
 }
 :root{
-  --varC-background: #fafafa;
-  --varC-letter-background: #1d1d1d;
-  --varC-letter-nav_a: grey;
-  --varC-footer: #262626;
-  --varC-letter-footer: #dddddd;
-  --varC-letter-hover-footer: #ffffff;
 
-  /* Variables de los colores */
 }
 @font-face {
   font-family: 'Roboto';
   src: local(''),
-       url('fonts/roboto/roboto-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('fonts/roboto/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('fonts/roboto/roboto-v20-latin-regular.woff2') format('woff2'),
+       url('fonts/roboto/roboto-v20-latin-regular.woff') format('woff');
 }
 body{
   position: relative;
   min-height: 100vh;
   padding-bottom: 91px;
-  background: var(--varC-background);
-  color: var(--varC-letter-background);
+  background: #fafafa;
+  color: #1d1d1d;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-
-  /*
-  El position absolute necesita un position diferente a static,
-  para que funcione por lo que lo ponemos en relative.
-
-  El min-height es para que por defecto mida el body lo mismo que
-  el navegador por ende el footer este abajo y cuando el contenido supere
-  a la altura del navegador pueda aumentar ademas de que se mantendria
-  el footer abajo tambien.
-
-  El padding es realmente la altura del footer en si, que es la que va
-  a quedar expluida del body a la hora del contenido ademas de que no se
-  va ha hacer mas grande el body ya que estamos con un
-  box-sizing: border-box para todos.
-  */
 }
 header{
   display: flex;
@@ -55,6 +27,7 @@ header{
   margin-bottom: 25px;
   box-shadow: 0 0px 3px 0 rgba(0,0,0,0.15);
 }
+/* ---------- */
 #options{
   display: flex;
   padding: 10px 25px;
@@ -68,19 +41,12 @@ header{
   margin-right: 25px;
   color: #ffffff;
 }
+/* ---------- */
 nav{
   align-self: center;
-  width: 1264px;
+  width: 90%;
   padding: 0;
   font-size: 16px;
-  /* Box-shadow: var(--varC-letter-footer) 0 10px 20px -8px;
-
-  width: calc(1264px + 20px);
-  Para que sea de 1264px desde el comiempo de la palabra de ali el 20,
-  que no es mas que 2 + 15 + 3
-
-  aling-self por defecto no funciona sin display:flex
-  */
 }
 nav > ul {
   display: flex;
@@ -101,10 +67,6 @@ nav > ul > li > a{
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
-}
-nav > ul > li > a:hover{
-  /* color: #ff7987; */
-  /* transition: color 0.3s ease 0s, left 0.3s ease 0s; */
 }
 nav > ul > li > a::after{
     background: none repeat scroll 0 0 transparent;
@@ -142,16 +104,19 @@ nav > ul > li:first-child > a::after{
   font-size: 14px;
 }
 #navIndex > button:hover{
-  cursor: pointer;
+  cursor: no-drop;
 }
 #navIndex > button:focus{
   outline: none;
 }
-#underLineA{
+#navIndexUnderlineOne{
   color: #7367f0;
 }
-#underLineA:hover{
+#navIndexUnderlineOne:hover{
   color: #7367f0;
+}
+#navIndexUnderlineTwo:hover, #navIndexUnderlineThree:hover{
+  cursor: no-drop;
 }
 #bodyIndex{
   display: flex;
@@ -161,25 +126,16 @@ nav > ul > li:first-child > a::after{
   border-radius: 5px;
   padding: 25px;
   border-radius: 5px;
-  /* box-shadow: 0 0px 3px 0 rgba(0,0,0,0.15); */
-  /*
-  border: 1px solid #dddddd;
-
-  min-height: calc(100vh - 194px);
-
-  25 padding up +77 +66  + 25 padding down;
-  */
 }
 #purpleIndex{
   position: absolute;
   width: 100%;
-  top: 93px;
+  top: 60px;
   left: 0;
   height: 150px;
   background: #7367f0;
   z-index: -1;
 }
-
 .bodyIndexCard{
   width: 100%;
   margin-bottom: 20px;
@@ -188,9 +144,6 @@ nav > ul > li:first-child > a::after{
   padding: 25px;
   background: #ffffff;
   transition: box-shadow 0.3s ease-in-out;
-}
-.bodyIndexCard:hover{
-  box-shadow: rgba(0,0,0,.1) 0 2px 24px 5px;
 }
 .bodyIndexCard > ul{
   list-style: none;
@@ -218,34 +171,13 @@ nav > ul > li:first-child > a::after{
   font-size: 21px;
   color: #7367f0;
 }
+.bodyIndexCard:hover{
+  box-shadow: rgba(0,0,0,.1) 0 2px 24px 5px;
+}
 .bodyIndexCard > ul > li > a:hover{
   text-decoration: underline;
   color: #7367f0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 footer{
   position: absolute;
   bottom: 0;
@@ -253,13 +185,13 @@ footer{
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: var(--varC-footer);
+  background: #262626;
 }
 .footer{
+  width: 90%;
   display: flex;
   align-self: center;
   justify-content: space-between;
-  width: 1264px;
 }
 .footer > ul{
   display: flex;
@@ -273,20 +205,19 @@ footer{
 .footer > ul > li > a{
   display: flex;
   padding: 15px 0;
-  color: var(--varC-letter-footer);
+  color: #dddddd;
   text-decoration: none;
 }
-.footer > ul > li > a:hover{
-  transition-duration: .4s;
-  text-decoration: underline;
-  color: var(--varC-letter-hover-footer);
-}
-.footerLine{
+.footerTwo{
   height: 20px;
   width: 100%;
   background: #2e2e2e;
 }
-
+.footer > ul > li > a:hover{
+  transition-duration: .4s;
+  text-decoration: underline;
+  color: #ffffff;
+}
 
 
 
