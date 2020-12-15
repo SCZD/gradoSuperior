@@ -24,7 +24,6 @@ header{
   flex-direction: column;
   width: 100%;
   background: #ffffff;
-  margin-bottom: 25px;
   box-shadow: 0 0px 3px 0 rgba(0,0,0,0.15);
 }
 /* ---------- */
@@ -218,9 +217,37 @@ footer{
   text-decoration: underline;
   color: #ffffff;
 }
-
-
-
+/* --------------------------------------------------- */
+#bodyIndexBase{
+    padding: calc(125px + 60px) 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 750px;
+    border-radius: 5px;
+    border-radius: 5px;
+}
+#bodyBadeDeDatos{
+  background: #ffffff;
+}
+#purpleIndex{
+  color: #ffffff;
+  display:flex;
+}
+#purpleIndex > p{
+  font-weight: 600;
+  font-size: 42px;
+  margin: 0 0 0 5%;
+  align-self: center;
+}
+#bodyIndexBase > p{
+  font-size: 17px;
+  line-height: 1.8em;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 35px;
+  color: #292929;
+}
+/* --------------------------------------------------- */
 
 
 
