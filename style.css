@@ -1,0 +1,305 @@
+*{
+  box-sizing: border-box;
+  /*
+  Para que mantenga el tamaño,i.e que si decimos que mida
+  150px y le damos un padding no se va ha hacer mas grande
+  tipo 150px el contenido mas el padding si no que no va ha superar
+  los 150px.
+  */
+}
+:root{
+  --varC-background: #fafafa;
+  --varC-letter-background: #1d1d1d;
+  --varC-letter-nav_a: grey;
+  --varC-footer: #262626;
+  --varC-letter-footer: #dddddd;
+  --varC-letter-hover-footer: #ffffff;
+
+  /* Variables de los colores */
+}
+@font-face {
+  font-family: 'Roboto';
+  src: local(''),
+       url('fonts/roboto/roboto-v20-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('fonts/roboto/roboto-v20-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+body{
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 91px;
+  background: var(--varC-background);
+  color: var(--varC-letter-background);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+
+  /*
+  El position absolute necesita un position diferente a static,
+  para que funcione por lo que lo ponemos en relative.
+
+  El min-height es para que por defecto mida el body lo mismo que
+  el navegador por ende el footer este abajo y cuando el contenido supere
+  a la altura del navegador pueda aumentar ademas de que se mantendria
+  el footer abajo tambien.
+
+  El padding es realmente la altura del footer en si, que es la que va
+  a quedar expluida del body a la hora del contenido ademas de que no se
+  va ha hacer mas grande el body ya que estamos con un
+  box-sizing: border-box para todos.
+  */
+}
+header{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #ffffff;
+  margin-bottom: 25px;
+  box-shadow: 0 0px 3px 0 rgba(0,0,0,0.15);
+}
+#options{
+  display: flex;
+  padding: 10px 25px;
+  background: #000000;
+  font-size: 12px;
+
+}
+#options > p {
+  padding:0;
+  margin: 0;
+  margin-right: 25px;
+  color: #ffffff;
+}
+nav{
+  align-self: center;
+  width: 1264px;
+  padding: 0;
+  font-size: 16px;
+  /* Box-shadow: var(--varC-letter-footer) 0 10px 20px -8px;
+
+  width: calc(1264px + 20px);
+  Para que sea de 1264px desde el comiempo de la palabra de ali el 20,
+  que no es mas que 2 + 15 + 3
+
+  aling-self por defecto no funciona sin display:flex
+  */
+}
+nav > ul {
+  display: flex;
+  padding: 10px 0;
+  margin: 0;
+  list-style: none;
+}
+nav > ul > li{
+  display: flex;
+}
+nav > ul > li > a{
+  display: flex;
+  position: relative;
+  padding: 12px 5px;
+  align-self: center;
+  margin: 0 3px;
+  color: rgba(32,41,47,.6);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+}
+nav > ul > li > a:hover{
+  /* color: #ff7987; */
+  /* transition: color 0.3s ease 0s, left 0.3s ease 0s; */
+}
+nav > ul > li > a::after{
+    background: none repeat scroll 0 0 transparent;
+    bottom: 8px;
+    content: '';
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #7367f0;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+nav > ul > li > a:hover::after {
+  width: 100%;
+  left: 0;
+}
+nav > ul > li:first-child > a::after{
+  width: 100%;
+  left: 0;
+}
+#navIndex{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+#navIndex > button{
+  align-self: center;
+  margin: 0;
+  padding: 0px 25px;
+  border: 0;
+  border-radius: 5px;
+  height: 45px;
+  background: #7367f0;
+  color: white;
+  font-size: 14px;
+}
+#navIndex > button:hover{
+  cursor: pointer;
+}
+#navIndex > button:focus{
+  outline: none;
+}
+#underLineA{
+  color: #7367f0;
+}
+#underLineA:hover{
+  color: #7367f0;
+}
+#bodyIndex{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 750px;
+  border-radius: 5px;
+  padding: 25px;
+  border-radius: 5px;
+  /* box-shadow: 0 0px 3px 0 rgba(0,0,0,0.15); */
+  /*
+  border: 1px solid #dddddd;
+
+  min-height: calc(100vh - 194px);
+
+  25 padding up +77 +66  + 25 padding down;
+  */
+}
+#purpleIndex{
+  position: absolute;
+  width: 100%;
+  top: 93px;
+  left: 0;
+  height: 150px;
+  background: #7367f0;
+  z-index: -1;
+}
+
+.bodyIndexCard{
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(0,0,0,0.047) 0 0 3.45px 0.57px;
+  padding: 25px;
+  background: #ffffff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+.bodyIndexCard:hover{
+  box-shadow: rgba(0,0,0,.1) 0 2px 24px 5px;
+}
+.bodyIndexCard > ul{
+  list-style: none;
+  padding: 0 0 0 17px;
+}
+.bodyIndexCard > ul > li{
+  margin-bottom: 25px;
+}
+.bodyIndexCard > ul > li > a{
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 4px;
+}
+.bodyIndexCard > hr{
+  width: 90%;
+  margin-left: 0;
+  justify-content: flex-start;
+  display: flex;
+  margin-bottom: 30px;
+}
+.bodyIndexCard > p{
+  margin: 0;
+  padding: 10px 0 3px 0;
+  font-size: 21px;
+  color: #7367f0;
+}
+.bodyIndexCard > ul > li > a:hover{
+  text-decoration: underline;
+  color: #7367f0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--varC-footer);
+}
+.footer{
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  width: 1264px;
+}
+.footer > ul{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.footer > ul:first-child > li{
+  margin-right: 15px;
+}
+.footer > ul > li > a{
+  display: flex;
+  padding: 15px 0;
+  color: var(--varC-letter-footer);
+  text-decoration: none;
+}
+.footer > ul > li > a:hover{
+  transition-duration: .4s;
+  text-decoration: underline;
+  color: var(--varC-letter-hover-footer);
+}
+.footerLine{
+  height: 20px;
+  width: 100%;
+  background: #2e2e2e;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
